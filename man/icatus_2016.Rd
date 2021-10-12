@@ -5,12 +5,7 @@
 \alias{icatus_2016}
 \title{International Classification of Activities for Time Use Statistics 2016}
 \format{
-A \link{tibble} with 230 rows and 10 variables:
-\describe{
-\item{price}{price, in US dollars}
-\item{carat}{weight of the diamond, in carats}
-...
-}
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 230 rows and 8 columns.
 }
 \source{
 \url{https://unstats.un.org/unsd/demographic-social/time-use/icatus-2016/}

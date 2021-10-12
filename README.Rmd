@@ -20,6 +20,14 @@ knitr::opts_chunk$set(
 
 An R package that contains time use activity classifications. See a list of known time use surveys [here](https://unstats.un.org/unsd/gender/timeuse/index.html).
 
+Here are some time use activity classifications:
+
+| Country  | Variable |
+| ---- | ---- | 
+| Australia | `au_2006` |
+| International | `icatus_2016` |
+
+
 ## Installation
 
 ``` r
@@ -48,6 +56,6 @@ icatus_2016 %>%
   count(PID)
 
 icatus_2016 %>%
-  head() %>%
+  head(2) %>%
   knitr::kable()
 ```
