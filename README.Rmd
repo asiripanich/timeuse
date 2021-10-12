@@ -1,0 +1,53 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# timeuse
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+An R package that contains time use activity classifications. See a list of known time use surveys [here](https://unstats.un.org/unsd/gender/timeuse/index.html).
+
+## Installation
+
+``` r
+library(remotes)
+install_github("asiripanich/timeuse")
+```
+
+## Example
+
+[International Classification of Activities for Time Use Statistics 2016](https://unstats.un.org/unsd/classifications/Family/Detail/2083):
+
+```{r example}
+library(timeuse)
+library(dplyr)
+library(knitr)
+
+# main categories
+icatus_2016 %>%
+  filter(is.na(ID) & is.na(CID)) %>%
+  select(1:4)
+
+# numbers of sub-categories in each main category (PID)
+icatus_2016 %>%
+  filter(!is.na(ID)) %>%
+  distinct(PID, ID, .keep_all = TRUE) %>%
+  count(PID)
+
+icatus_2016 %>%
+  head() %>%
+  knitr::kable()
+```
